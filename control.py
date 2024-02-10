@@ -43,14 +43,14 @@ def send_all():
     inp.hotkey('ctrl', 'left')
     
     time.sleep(0.5)
-    all_tabs = find_positions('references/tab_identifier.png', [0, 0, inp.resolution()[0] * 2, 80])
+    all_tabs = find_positions("references/tab_identifier.png", [0, 0, inp.resolution()[0] * 2, 80])
     first = next(all_tabs)
     click_by_position(first)
     all_tabs_lenght = sum([1 for _ in all_tabs]) + 1
     for i in range(all_tabs_lenght):
         inp.hotkey('command', 'down')
         time.sleep(0.1)
-        find_and_click('references/finish_attempt.png')
+        find_and_click("references/finish_attempt.png")
         if i != all_tabs_lenght - 1:
             inp.hotkey('option', 'command', 'right')
     click_by_position(first)
@@ -60,7 +60,7 @@ def send_all():
         time.sleep(0.)
         inp.hotkey('command', 'down')
         time.sleep(0.05)
-        find_and_click('references/send_all.png')
+        find_and_click("references/send_all.png")
         inp.click(700, 630)
         if j != all_tabs_lenght - 1:
             inp.hotkey('option', 'command', 'right')
@@ -70,14 +70,14 @@ def start_all():
     inp.hotkey('ctrl', 'left')
     time.sleep(0.5)
     
-    all_tabs = find_positions('references/tab_identifier.png', [0, 0, inp.resolution()[0] * 2, 80])
+    all_tabs = find_positions("references/tab_identifier.png", [0, 0, inp.resolution()[0] * 2, 80])
     click_by_position(next(all_tabs))
     all_tabs_lenght = sum([1 for _ in all_tabs]) + 1
     for i in range(all_tabs_lenght):
-        find_and_click('references/start.png')
+        find_and_click("references/start.png")
         inp.hotkey('option', 'command', 'right')
 def solve_critical_error():    
-    all_tabs = find_positions('references/tab_identifier.png', [0, 0, inp.resolution()[0] * 2, 80])
+    all_tabs = find_positions("references/tab_identifier.png", [0, 0, inp.resolution()[0] * 2, 80])
     click_by_position(next(all_tabs))
     all_tabs_lenght = sum([1 for _ in all_tabs]) + 1
     for i in range(all_tabs_lenght):
