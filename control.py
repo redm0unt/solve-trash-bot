@@ -111,3 +111,4 @@ match choise:
         solve_critical_error()
     case _:
         exit()
+
