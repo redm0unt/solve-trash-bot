@@ -5,7 +5,7 @@ import pyautogui as inp
 
 def find_positions(path, Region=[0, 0, inp.resolution()[0] * 2, inp.resolution()[1] * 2]):
     return inp.locateAllOnScreen(path, confidence = 0.8, region=Region)
-   
+
 def solve(position):
     # translation resolution
     top = position.top / 2 + position.height / 4
@@ -25,7 +25,7 @@ def click_by_position(position):
     top = position.top / 2 + position.height / 4
     left = position.left / 2 + position.width / 4
     inp.click(left, top)
- 
+
 def auto_solve(): 
     inp.click(list(map(lambda x: x / 2, inp.resolution())))
     inp.hotkey('ctrl', 'left')
